@@ -1,0 +1,81 @@
+fieldset {
+  padding: 0;
+}
+.details {
+  display: block;
+}
+.details .title {
+  position: relative;
+}
+.details:first-child .icon.title,
+.details:first-child .title {
+  border-top: none;
+}
+input.close[type="radio"],
+.details input[type="checkbox"],
+.details input[type="radio"] {
+  display: none;
+}
+.details input[type="checkbox"] ~ .icon.title::before,
+.details input[type="radio"] ~ .icon.title::before {
+  content: '';
+  font-size: 1em;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 0;
+  height: 0;
+  margin: .32em 0 0 0;
+  border-left: 1.2em solid;
+  border-left: 1.2em solid currentColor;
+  border-right: .6em solid transparent;
+  border-top: .6em solid transparent;
+  border-bottom: .6em solid transparent;
+  speak: none;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.details input[type="checkbox"]:checked ~ .icon.title::before,
+.details input[type="radio"]:checked ~ .icon.title::before {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  position: relative;
+  left: -0.2em;
+}
+.details input[type="checkbox"]:not(:checked) ~ .title,
+.details input[type="radio"]:not(:checked) ~ .title {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.details input[type="checkbox"]:not(:checked) ~ .title input[type="radio"]:not(:checked) ~ .title > label[for],
+.details input[type="radio"]:not(:checked) ~ .title input[type="radio"]:not(:checked) ~ .title > label[for],
+.details input[type="checkbox"]:not(:checked) ~ .title ~ *,
+.details input[type="radio"]:not(:checked) ~ .title ~ * {
+  display: none;
+}
+.details input[type="radio"]:checked ~ .title > label[for] {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+.details input[type="checkbox"]:checked ~ *:not(.title),
+.details input[type="radio"]:checked ~ *:not(.title) {
+  display: block;
+}
+.details .meta {
+  padding-left: 1.4em;
+}
+.details .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  /* line-height: 0; */
+  position: relative;
+}

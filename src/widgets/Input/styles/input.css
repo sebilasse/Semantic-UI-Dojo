@@ -1,0 +1,671 @@
+/*!
+ * # Semantic UI 2.2.7 - Input
+ * http://github.com/semantic-org/semantic-ui/
+ *
+ *
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+
+/*******************************
+           Standard
+*******************************/
+
+
+/*--------------------
+        Inputs
+---------------------*/
+
+.ui.input {
+  position: relative;
+  font-weight: normal;
+  font-style: normal;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  color: rgba(0, 0, 0, 0.87);
+}
+.ui.input input {
+  margin: 0em;
+  max-width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  text-align: left;
+  line-height: 1.2142em;
+  font-family: 'Maven Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  padding: 0.62623333em 0.93333333em;
+  background: #FFFFFF;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 0.26666667rem;
+  -webkit-transition: box-shadow 0.15s ease-out, border-color 0.15s ease-out;
+  transition: box-shadow 0.15s ease-out, border-color 0.15s ease-out;
+  box-shadow: none;
+}
+
+/*--------------------
+      Placeholder
+---------------------*/
+
+
+/* browsers require these rules separate */
+.ui.input input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+.ui.input input::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+.ui.input input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
+/*******************************
+            States
+*******************************/
+
+
+/*--------------------
+        Disabled
+---------------------*/
+
+.ui.disabled.input,
+.ui.input input[disabled] {
+  opacity: 0.45;
+}
+.ui.disabled.input input,
+.ui.input input[disabled] {
+  pointer-events: none;
+}
+
+/*--------------------
+        Active
+---------------------*/
+
+.ui.input input:active,
+.ui.input.down input {
+  border-color: rgba(0, 0, 0, 0.3);
+  background: #FAFAFA;
+  color: rgba(0, 0, 0, 0.87);
+  box-shadow: none;
+}
+
+/*--------------------
+       Loading
+---------------------*/
+
+.ui.loading.loading.input > i.icon:before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  margin: -1.5em 0em 0em -1.5em;
+  width: 3em;
+  height: 3em;
+  border-radius: 500rem;
+  border: 0.2em solid rgba(0, 0, 0, 0.1);
+}
+.ui.loading.loading.input > i.icon:after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  margin: -1.5em 0em 0em -1.5em;
+  width: 3em;
+  height: 3em;
+  -webkit-animation: button-spin 0.64s linear;
+          animation: button-spin 0.64s linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  border-radius: 500rem;
+  border-color: #74757A transparent transparent;
+  border-style: solid;
+  border-width: 0.2em;
+  box-shadow: 0px 0px 0px 1px transparent;
+}
+
+/*--------------------
+        Focus
+---------------------*/
+
+.ui.input.focus input,
+.ui.input input:focus {
+  border-color: #6DA7D1;
+  background: #FFFFFF;
+  color: rgba(0, 0, 0, 0.8);
+  box-shadow: none;
+}
+.ui.input.focus input::-webkit-input-placeholder,
+.ui.input input:focus::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.87);
+}
+.ui.input.focus input::-moz-placeholder,
+.ui.input input:focus::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.87);
+}
+.ui.input.focus input:-ms-input-placeholder,
+.ui.input input:focus:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+/*--------------------
+        Error
+---------------------*/
+
+.ui.input.error input {
+  background-color: #FFF6F6;
+  border-color: #E0B4B4;
+  color: #9F3A38;
+  box-shadow: none;
+}
+
+/* Error Placeholder */
+.ui.input.error input::-webkit-input-placeholder {
+  color: #e7bdbc;
+}
+.ui.input.error input::-moz-placeholder {
+  color: #e7bdbc;
+}
+.ui.input.error input:-ms-input-placeholder {
+  color: #e7bdbc !important;
+}
+
+/* Focused Error Placeholder */
+.ui.input.error input:focus::-webkit-input-placeholder {
+  color: #da9796;
+}
+.ui.input.error input:focus::-moz-placeholder {
+  color: #da9796;
+}
+.ui.input.error input:focus:-ms-input-placeholder {
+  color: #da9796 !important;
+}
+
+
+/*******************************
+           Variations
+*******************************/
+
+
+/*--------------------
+      Transparent
+---------------------*/
+
+.ui.transparent.input input {
+  border-color: transparent !important;
+  background-color: transparent !important;
+  padding: 0em !important;
+  box-shadow: none !important;
+}
+
+/* Transparent Icon */
+.ui.transparent.icon.input > i.icon {
+  width: 1.1em;
+}
+.ui.transparent.icon.input > input {
+  padding-left: 0em !important;
+  padding-right: 2em !important;
+}
+.ui.transparent[class*="left icon"].input > input {
+  padding-left: 2em !important;
+  padding-right: 0em !important;
+}
+
+/* Transparent Inverted */
+.ui.transparent.inverted.input {
+  color: #FFFFFF;
+}
+.ui.transparent.inverted.input input {
+  color: inherit;
+}
+.ui.transparent.inverted.input input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.ui.transparent.inverted.input input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.ui.transparent.inverted.input input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/*--------------------
+         Icon
+---------------------*/
+
+.ui.icon.input > i.icon {
+  cursor: default;
+  position: absolute;
+  line-height: 1;
+  text-align: center;
+  top: 0px;
+  right: 0px;
+  margin: 0em;
+  height: 100%;
+  width: 2.56666667em;
+  opacity: 0.5;
+  border-radius: 0em 0.26666667rem 0.26666667rem 0em;
+  -webkit-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+}
+.ui.icon.input > i.icon:not(.link) {
+  pointer-events: none;
+}
+.ui.icon.input input {
+  padding-right: 2.56666667em !important;
+}
+.ui.icon.input > i.icon:before,
+.ui.icon.input > i.icon:after {
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+  margin-top: -0.5em;
+}
+.ui.icon.input > i.link.icon {
+  cursor: pointer;
+}
+.ui.icon.input > i.circular.icon {
+  top: 0.35em;
+  right: 0.5em;
+}
+
+/* Left Icon Input */
+.ui[class*="left icon"].input > i.icon {
+  right: auto;
+  left: 1px;
+  border-radius: 0.26666667rem 0em 0em 0.26666667rem;
+}
+.ui[class*="left icon"].input > i.circular.icon {
+  right: auto;
+  left: 0.5em;
+}
+.ui[class*="left icon"].input > input {
+  padding-left: 2.56666667em !important;
+  padding-right: 0.93333333em !important;
+}
+
+/* Focus */
+.ui.icon.input > input:focus ~ i.icon {
+  opacity: 1;
+}
+
+/*--------------------
+        Labeled
+---------------------*/
+
+
+/* Adjacent Label */
+.ui.labeled.input > .label {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  margin: 0;
+  font-size: 1em;
+}
+.ui.labeled.input > .label:not(.corner) {
+  padding-top: 0.73333333em;
+  padding-bottom: 0.73333333em;
+}
+
+/* Regular Label on Left */
+.ui.labeled.input:not([class*="corner labeled"]) .label:first-child {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.ui.labeled.input:not([class*="corner labeled"]) .label:first-child + input {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-left-color: transparent;
+}
+.ui.labeled.input:not([class*="corner labeled"]) .label:first-child + input:focus {
+  border-left-color: #6DA7D1;
+}
+
+/* Regular Label on Right */
+.ui[class*="right labeled"].input input {
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  border-right-color: transparent !important;
+}
+.ui[class*="right labeled"].input input + .label {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.ui[class*="right labeled"].input input:focus {
+  border-right-color: #6DA7D1 !important;
+}
+
+/* Corner Label */
+.ui.labeled.input .corner.label {
+  top: 1px;
+  right: 1px;
+  font-size: 0.6em;
+  border-radius: 0em 0.26666667rem 0em 0em;
+}
+
+/* Spacing with corner label */
+.ui[class*="corner labeled"]:not([class*="left corner labeled"]).labeled.input input {
+  padding-right: 2.5em !important;
+}
+.ui[class*="corner labeled"].icon.input:not([class*="left corner labeled"]) > input {
+  padding-right: 3.25em !important;
+}
+.ui[class*="corner labeled"].icon.input:not([class*="left corner labeled"]) > .icon {
+  margin-right: 1.25em;
+}
+
+/* Left Labeled */
+.ui[class*="left corner labeled"].labeled.input input {
+  padding-left: 2.5em !important;
+}
+.ui[class*="left corner labeled"].icon.input > input {
+  padding-left: 3.25em !important;
+}
+.ui[class*="left corner labeled"].icon.input > .icon {
+  margin-left: 1.25em;
+}
+
+/* Corner Label Position  */
+.ui.input > .ui.corner.label {
+  top: 1px;
+  right: 1px;
+}
+.ui.input > .ui.left.corner.label {
+  right: auto;
+  left: 1px;
+}
+
+/*--------------------
+        Action
+---------------------*/
+
+.ui.action.input > .button,
+.ui.action.input > .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+.ui.action.input > .button,
+.ui.action.input > .buttons > .button {
+  padding-top: 0.73333333em;
+  padding-bottom: 0.73333333em;
+  margin: 0;
+}
+
+/* Button on Right */
+.ui.action.input:not([class*="left action"]) > input {
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  border-right-color: transparent !important;
+}
+.ui.action.input:not([class*="left action"]) > .dropdown:not(:first-child),
+.ui.action.input:not([class*="left action"]) > .button:not(:first-child),
+.ui.action.input:not([class*="left action"]) > .buttons:not(:first-child) > .button {
+  border-radius: 0px;
+}
+.ui.action.input:not([class*="left action"]) > .dropdown:last-child,
+.ui.action.input:not([class*="left action"]) > .button:last-child,
+.ui.action.input:not([class*="left action"]) > .buttons:last-child > .button {
+  border-radius: 0px 0.26666667rem 0.26666667rem 0px;
+}
+
+/* Input Focus */
+.ui.action.input:not([class*="left action"]) input:focus {
+  border-right-color: #6DA7D1 !important;
+}
+
+/* Button on Left */
+.ui[class*="left action"].input > input {
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-left-color: transparent !important;
+}
+.ui[class*="left action"].input > .dropdown,
+.ui[class*="left action"].input > .button,
+.ui[class*="left action"].input > .buttons > .button {
+  border-radius: 0px;
+}
+.ui[class*="left action"].input > .dropdown:first-child,
+.ui[class*="left action"].input > .button:first-child,
+.ui[class*="left action"].input > .buttons:first-child > .button {
+  border-radius: 0.26666667rem 0px 0px 0.26666667rem;
+}
+
+/* Input Focus */
+.ui[class*="left action"].input > input:focus {
+  border-left-color: #6DA7D1 !important;
+}
+
+/*--------------------
+       Inverted
+---------------------*/
+
+
+/* Standard */
+.ui.inverted.input input {
+  border: none;
+}
+
+/*--------------------
+        Fluid
+---------------------*/
+
+.ui.fluid.input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.ui.fluid.input > input {
+  width: 0px !important;
+}
+
+/*--------------------
+        Size
+---------------------*/
+
+.ui.mini.input {
+  font-size: 0.73333333em;
+}
+.ui.small.input {
+  font-size: 0.93333333em;
+}
+.ui.input {
+  font-size: 1em;
+}
+.ui.large.input {
+  font-size: 1.13333333em;
+}
+.ui.big.input {
+  font-size: 1.26666667em;
+}
+.ui.huge.input {
+  font-size: 1.4em;
+}
+.ui.massive.input {
+  font-size: 1.73333333em;
+}
+
+
+/*******************************
+         Theme Overrides
+*******************************/
+
+
+/* NOTE - goal : provide a consistent default for ALL input element types
+// specified in HTML5 including
+// - CSS polyfill for "number", "range", "color"
+// - crossbrowser fixes
+// - CSS validation feedback
+// - some more variables
+// seeAlso: ./collections/form.overrides
+// TODO : DOC
+*/
+/* checkbox hover */
+.ui.checkbox:hover,
+.ui.checkbox label:hover {
+  cursor: pointer;
+}
+.ui.checkbox label {
+  font-size: 0.93333333em !important;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.87);
+  text-transform: none;
+}
+
+/* input type="number"
+// targeting Safari versions without "spinner position correcting"
+*/
+/* 6.1 - 7.0 */
+@media screen and (min-color-index: 0) and (-webkit-min-device-pixel-ratio: 0) {
+  .ui.corner.labeled input[type="number"]::-webkit-inner-spin-button {
+    position: relative;
+    right: 2.5em;
+  }
+}
+
+/* >= 7.0 */
+@supports (overflow:-webkit-marquee) and (justify-content:inherit) {
+  .ui.corner.labeled input[type="number"]::-webkit-inner-spin-button {
+    position: relative;
+    right: 2.5em;
+  }
+}
+
+/* input type="range"
+// TODO: NEW MODULE !
+*/
+[class*='-ms-']:before {
+  opacity: .15;
+}
+input[type='range'] {
+  width: 100%;
+}
+.ui.form input[type='range'] {
+  box-sizing: border-box;
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  border-radius: .625em;
+  background: none;
+  cursor: pointer;
+  /* TODO : wish I could style this */
+}
+.ui.form input[type='range']::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  border: none;
+  
+/* because IE */
+  width: 100%;
+  height: 0.8em;
+  border-radius: 500rem;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 1px 1px rgba(0, 0, 0, 0.05);
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+.ui.form input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  margin-top: -0.4em;
+  
+/* -.3 em with strong shadow*/
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: none;
+  background: #FFFFFF -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+  background: #FFFFFF linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+  box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15), 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;
+}
+.ui.form input[type='range']::-moz-range-track {
+  z-index: -1;
+  /* fix Firefox WTF */
+  border: none;
+  
+/* because IE */
+  width: 100%;
+  height: 0.8em;
+  border-radius: 500rem;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 1px 1px rgba(0, 0, 0, 0.05);
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+.ui.form input[type='range']::-moz-range-thumb {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: none;
+  background: #FFFFFF linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+  box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15), 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;
+  
+/* Firefox-only, it won't work in IE
+       and it's messed up in Chrome */
+  cursor: ew-resize;
+}
+.ui.form input[type='range']::-ms-track {
+  border: none;
+  
+/* because IE */
+  width: 100%;
+  height: 0.8em;
+  border-radius: 500rem;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 1px 1px rgba(0, 0, 0, 0.05);
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+  color: transparent;
+}
+.ui.form input[type='range']::-ms-thumb {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: none;
+  background: #FFFFFF linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+  box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15), 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;
+}
+.ui.form input[type='range']::-ms-fill-lower,
+.ui.form input[type='range']::-ms-fill-upper {
+  background: transparent;
+}
+.ui.form input[type='range']::-ms-tooltip {
+  display: none;
+}
+.ui.form input[type='range']:focus {
+  outline: none;
+  box-shadow: inset 0 1px .25em #eee;
+}
+/* input type="range" .labeled
+// 1 ---x---- 10
+*/
+.ui.form input[type="range"].labeled:before {
+  content: attr(min);
+  padding-right: 2px;
+  font-size: 0.93333333em;
+  color: rgba(140, 140, 140, 0.87);
+}
+.ui.form input[type="range"].labeled:after {
+  content: attr(max);
+  padding-left: 2px;
+  font-size: 0.93333333em;
+  color: rgba(140, 140, 140, 0.87);
+  text-align: right;
+}
+
+
+/*******************************
+         Site Overrides
+*******************************/
+
